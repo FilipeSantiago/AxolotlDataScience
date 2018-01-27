@@ -9,7 +9,7 @@ class TreeClassifier:
         self.learning_algorithm = None
 
     def init_learning_algorithm(self):
-        self.learning_algorithm = tree.DecisionTreeClassifier()
+        self.learning_algorithm = tree.DecisionTreeClassifier(max_depth=4)
         return self
 
     def visualize_tree(self, tree, feature_names):
