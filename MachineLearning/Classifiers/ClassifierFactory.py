@@ -5,7 +5,7 @@ from MachineLearning.Classifiers import KNeighborsClassifier as knn
 from MachineLearning.Classifiers import NaiveBayes as nb
 from MachineLearning.Classifiers import NeuralNetwork
 from MachineLearning.Classifiers import GaussianProcess
-
+from MachineLearning.Classifiers import GRASPForestClassifier
 
 class ClassifierFactory:
 
@@ -32,7 +32,10 @@ class ClassifierFactory:
         elif classifier_type == classifier_types.GaussianProcess:
             classifier = GaussianProcess.GaussianProcess()
 
-        return self.init_classifier(classifier)
+        elif classifier_type == classifier_types.GRASPForest:
+            classifier = GRASPForestClassifier.GRASPForestClassifier()
+
+        return classifier
 
     def init_classifier(self, classifier):
         return classifier.init_learning_algorithm() \

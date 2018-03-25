@@ -8,3 +8,4 @@ class ClassifierTypes(Enum):
     NaiveBayes = 4
     NeuralNetwork = 5
     GaussianProcess = 6
+    GRASPForest = 7
