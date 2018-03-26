@@ -70,5 +70,14 @@ class DataManipulation:
 
         return discretization_list
 
+    def create_new_column_based_on_operation(self, attributes, output_column_name, drop_after_merge=True):
+
+        self.df[output_column_name] = self.df[attributes].sum(axis=1)
+
+        if drop_after_merge:
+            self.drop_columns(attributes)
+
+        return self
+
     def get_data_frame(self):
         return self.df

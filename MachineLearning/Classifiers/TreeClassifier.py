@@ -10,7 +10,7 @@ class TreeClassifier:
 
     def init_learning_algorithm(self):
         self.learning_algorithm = tree.DecisionTreeClassifier(max_depth=4)
-        return self
+        return self.learning_algorithm
 
     def visualize_tree(self, tree, feature_names):
 
@@ -23,5 +23,3 @@ class TreeClassifier:
         except:
             exit("Could not run dot, ie graphviz, to produce visualization")
 
-    def get_learning_algorithm(self):
-        return self.learning_algorithm

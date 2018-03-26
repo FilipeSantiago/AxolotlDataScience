@@ -8,7 +8,4 @@ class NeuralNetwork:
 
     def init_learning_algorithm(self):
         self.learning_algorithm = MLPClassifier(alpha=1)
-        return self
-
-    def get_learning_algorithm(self):
         return self.learning_algorithm

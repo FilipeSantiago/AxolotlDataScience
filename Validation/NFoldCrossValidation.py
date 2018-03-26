@@ -16,12 +16,6 @@ class NFoldCrossValidation:
 
     def n_fold_cross_validation(self, cv=10):
 
-        if isinstance(self.attributes, pd.DataFrame):
-            self.attributes = self.attributes.as_matrix()
-
-        if isinstance(self.classes, pd.DataFrame):
-            self.classes = self.classes.as_matrix()
-
         data = np.concatenate((self.attributes, np.asarray([self.classes]).T), axis=1).tolist()
 
         split_list = lambda lst, sz: [lst[j:j + sz] for j in range(0, len(lst), sz)]
